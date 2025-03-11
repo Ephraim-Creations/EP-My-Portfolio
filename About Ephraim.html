@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Other head elements like title and link to CSS it (links to social accounts) -->
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ABOUT | Ephraim Mutwiri</title>
+
+
+<style>
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+
+        }
+
+        
+        
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+        }
+         
+         .logo-img{
+         width:275px;
+         height: fit-content;
+        }
+
+        .nav {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
+.nav-links {
+    position: fixed;
+    top: 0;
+   left: -100%;
+    width: 0px;
+    height: 100vh;
+    background: #000000e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-links.show {
+    left: 0;
+}
+
+.nav-links a {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 15px;
+   border-radius: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0ff;
+    color: #000000;
+}
+
+.mobile-menu-toggle {
+    float: right;
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #0ff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 1000px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links a {
+        margin: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+
+
+main {
+ padding: 30px;
+}
+	
+
+#media {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.media-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;}
+
+#media h2{
+    color: #0ff;
+} 
+#media p{
+    color: #ccc;
+}
+#media h3{
+    color:#0ff;
+    font-size: 20px;
+}
+
+#media a{
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 10px 5px;
+}
+
+#media a:hover {
+            background-color: #0ff;
+            color: #000000;
+            border: 0;
+        }
+
+.media-box {
+    position: relative;
+    width: 390px;
+    margin: 15px;
+    overflow: hidden;
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: transform 0.3s;
+}
+
+.media-box:hover {
+    transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+.media-image {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.media-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #484848da;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Fade effect */
+}
+
+.media-box:hover .media-info {
+    opacity: 1; /* Show info on hover */
+}
+
+.media-box:hover .media-image {
+    transform: translateX(-100%); /* Move image out */
+}
+
+
+/*Hover boxes style*/
+#services{ padding: 20px;
+    text-align: center;
+
+}
+#services h2{
+    color: #0ff;
+}
+#hover-boxes {
+    display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+   
+
+}
+
+.hover-box {
+    background-color: #727272;
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    text-align: center; /* Center text */
+    width: 265px;
+    padding: 15px;
+}
+
+
+.hover-box:hover {
+    color: #111;
+    background-color: #0ff;
+    transform:scale(1.1); /* Lift the box on hover */
+}
+
+
+/*STATISTICS STYLES*/
+#statistics {
+    text-align: center;
+    margin: 40px 0; /* Space above and below */
+    padding: 20px;
+}
+#statistics h2{
+    color:#0ff;
+}
+.statistics-container { 
+    margin-top:50px;
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transform:scale(1.1); /* Lift the box on hover */
+
+}
+.statistic {
+    background-color: #727272;
+    border: 0px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    width: 225px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+        
+}
+
+.statistic:hover {
+    background-color: #0FF;
+    color: #111;
+    transform:scale(1.05); /* Lift the box on hover */
+}
+
+.statistic h3 {
+      font-size: 2rem;
+      color: #001b93;
+      margin: 0;
+    }
+  
+    .statistic p {
+      font-size: 1rem;
+         }
+
+/*STYLE FOR  THE  REVIWS*/
+.container { padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius:5px ;
+        }
+
+        .reviews-title {
+            color: #0ff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .review-list {
+            margin-top: 30px;
+        }
+
+        .review-item {
+            background-color: #727272;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+
+        }
+
+        .review-item:hover {
+            background-color: #0ff;
+    transform:scale(1.01); /*zoom box on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+}
+.review-item:hover .rating{
+    color: #222;
+}
+
+        .review-item h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #000000;
+        }
+
+        .review-item p {
+            margin: 10px 0;
+            color: #000000;
+        }
+
+        .review-item .rating {
+            color: #ffd900;
+        }
+
+
+/*FOOTER STYLE*/
+.footer {
+    background-color:#000000;
+    color: rgb(255, 255, 255); /* White text */
+    text-align: center; /* Centered text */
+    padding: 7px; /* Padding for footer */
+    position: relative; /* Ensure footer stays at the bottom */
+	height:fit-content;
+}
+
+.footer-links {
+    margin-bottom: 0px; /* Space below the links */
+}
+
+.footer-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+#contact-info {
+    text-align: center; /* Center text */
+	color:#fff;
+}
+
+
+
+.social-icons { justify-content: center;
+      display: flex;
+      gap: 15px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0px 40px #0ff;
+    }
+    .social-icons a.facebook {
+      background-color: #4267B2;
+    }
+    .social-icons a.twitter {
+      background-color: #1DA1F2;
+    }
+    .social-icons a.instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+    .social-icons a.linkedin {
+      background-color: #0077B5;
+    }
+    .social-icons a.youtube {
+      background-color: #FF0000;
+    }
+    .social-icons a.tiktok {
+      background-color: #222;
+    }
+
+.contact-details p {
+    font-size: 1.2em; /* Font size for email and phone */
+    color: #fff; /* Darker color for text */
+}
+
+.contact-details a {font-size: 1.1em;
+color: #0ff;
+text-decoration: none;}
+
+.contact-details a:hover{ color:#007BFF;
+text-decoration: none;}
+
+
+</style>
+
+
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div>           
+                <a href="Contact Ephraim.html">
+                    <img src="New logo.jpg" class="logo-img">
+                </a>
+            </div><!--logo division-->
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+              <a href="index.html">Home</a>
+              <a href="About Ephraim.html">About</a>
+              <a href="serviices.html">Services</a>
+              <a href="portfolio projects.html">Portfolio</a>
+              <a href="Contact Ephraim.html">Contact</a>
+              <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+            </div>
+        </nav>
+        </header>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+                if (navLinks.classList.toggle('active')) {
+                    menuToggle.textContent = 'x';
+                } else {
+                    menuToggle.textContent = '☰';
+                }
+            });
+        </script>
+
+
+
+</head>
+
+<body>
+
+<main>
+<section id="media">
+    <h2>A little about my work...</h2>
+    <p><i>hover through the images below and let the magic happen</i></p>
+    <div class="media-container">
+
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="ec.jpg" alt="Ephraim Creations" class="media-image">
+            <div class="media-info">
+                <h3>Ephraim Creations</h3><br>
+                <p>I founded a website design Agency called<br> Ephraim Creations. </p>
+            </div>
+        </div>
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="devdev.jpg" alt="Deveronig Digital(An online store)" class="media-image">
+            <div class="media-info">
+                <h3>Deveronig Digital</h3>
+                <p>This is a shop website.Customers buy online</p>
+            </div>
+        </div>
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="campus-konnect.jpg" alt="campus-konnect" class="media-image">
+            <div class="media-info">
+                <h3>Campus Konnect</h3>
+                <p>This is a youth podcast website. I am also a host</p>
+            </div>
+        </div>
+    </div>
+    <h3>Wanna see more?</h3>
+    <a href="portfolio projects.html">See my portfolio</a>
+
+</section>
+
+<script src="media homepage.js"></script>
+
+
+		 <section id="services">
+    <h2>My Services...</h2>
+    <div id="hover-boxes">
+        <div class="hover-box">
+            <h3>Web Development</h3>
+            <p>Custom website development using the latest technologies to ensure performance and scalability.</p>
+        </div>
+
+        <div class="hover-box">
+            <h3>Web Design</h3>
+            <p>Beautiful and intuitive designs tailored to your brand identity and target audience.</p>
+            <br>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-alt checked"></span>
+            <span>(4.6)</span>Rating
+         </div>
+
+        <div class="hover-box">
+            <h3>Graphic Design</h3>
+            <p>Beautiful and intuitive designs tailored to your brand identity and target audience.</p>
+            <p>e.g. posters, wedding cards, logos, book covers, business cards and social post/ illustrations. </p>
+        </div>
+
+        <div class="hover-box">
+          <h3>E-commerse solutions</h3>
+          <p>Craft powerful online stores with user-friendly interfaces and secure payment options.</p>
+        </div>
+
+    </div>
+</section>
+
+		
+<section id="statistics">
+    <h2>My Achievements</h2>
+    <div class="statistics-container">
+      <div class="statistic">
+        <h3 id="customers-served">100+</h3>
+        <p>Customers Served</p>
+      </div>
+      <div class="statistic">
+        <h3 id="websites-created">20</h3>
+        <p>Websites Created</p>
+      </div>
+      <div class="statistic">
+        <h3 id="partners">20+</h3>
+        <p>Partners</p>
+      </div>
+      <div class="statistic">
+        <h3 id="experience">3+</h3>
+        <p>Experience (years)</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function animateCount(target, endValue, duration) {
+        let startValue = 0;
+        let increment = endValue / (duration / 16);
+        function count() {
+            let currentValue = startValue;
+            let counter = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= endValue) {
+                    clearInterval(counter);
+                    setTimeout(() => {
+                        target.textContent = "0+"; // Reset to 0
+                        count(); // Restart animation
+                    }, 1000); // Pause for 1s before restarting
+                } else {
+                    target.textContent = Math.floor(currentValue) + "+";
+                }
+            }, 16);
+        }
+        count();
+    }
+  
+    function startCounting() {
+        animateCount(document.getElementById("customers-served"), 101, 2000);
+        animateCount(document.getElementById("websites-created"), 21, 2000);
+        animateCount(document.getElementById("partners"), 11, 2000);
+        animateCount(document.getElementById("experience"), 5, 2000);
+    }
+  
+    document.addEventListener("DOMContentLoaded", startCounting);
+  </script>
+
+<!--Reviews-->
+<div class="container">
+    <h1 class="reviews-title">Customer Reviews</h1>
+
+    <!-- Display Reviews -->
+    <div class="review-list">
+        <div class="review-item">
+            <h4>Newton Musembi</h4>
+            <p><i>(Entrepreneur)</i></p>
+            <p class="rating">Rating: ★★★★★</p>
+            <p>I’m beyond impressed with Ephraim’s website design! The attention to detail and functionality exceeded my expectations. 
+               My e-commerce platform, complete with 100 products and content, was delivered in just two weeks. Highly recommended!</p>
+        </div>
+
+        <div class="review-item">
+            <h4>Ann James</h4>
+            <p><i>(Digital & Affiliate Marketer)</i></p>
+            <p class="rating">Rating: ★★★★☆</p>
+            <p>The advertising posters were of top-notch quality, and the delivery was incredibly fast. Ephraim is my go-to for future projects!</p>
+        </div>
+
+        <div class="review-item">
+            <h4>Jane Muthoni</h4>
+            <p><i>(Entrepreneur)</i></p>
+            <p class="rating">Rating: ★★★★☆</p>
+            <p>The logo designed for my restaurant was exactly what I envisioned—clean, professional, and unique. Great work! 👍</p>
+        </div>
+
+        <div class="review-item">
+            <h4>James Macharia</h4>
+            <p><i>(Electrical Engineer)</i></p>
+            <p class="rating">Rating: ★★★★★</p>
+            <p>In just three days, Ephraim delivered a sleek, professional portfolio website that perfectly showcases all my projects. 
+               Outstanding service and efficiency!</p>
+        </div>
+
+        <div class="review-item">
+            <h4>Mary Atieno</h4>
+            <p><i>(Small Business Owner)</i></p>
+            <p class="rating">Rating: ★★★★★</p>
+            <p>From start to finish, the experience was seamless. Ephraim created an attractive and user-friendly website that has 
+               helped increase my customer engagement significantly!</p>
+        </div>
+
+        <div class="review-item">
+            <h4>Kevin Mutua</h4>
+            <p><i>(Freelance Photographer)</i></p>
+            <p class="rating">Rating: ★★★★☆</p>
+            <p>I needed a website to showcase my photography, and Ephraim delivered exactly that. 
+               The gallery layout is stunning, and the website runs smoothly. Would definitely recommend!</p>
+        </div>
+    </div>
+</div>
+
+
+    </main>
+</center>
+
+  <!--FOOTER SECTION-->  <footer class="footer">
+  <section id="contact-info">
+    <h2>On socials</h2>
+            <!-- Social Media Links with Icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+              </div>
+       
+        </section>
+    <!--contact details-->
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations or project enquiries.</p>
+    <div class="contact-details">
+        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+        <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+    </div>
+    <br>	
+        <div class="copyright">
+          &copy; 2024-2025 Ephraim Mutwiri.<br>
+           A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+            <br><br><b>Reproduction of content strictly prohibited.</b>
+        </div>
+        <br>
+    </footer>
+	
+</body>
+
+</html>

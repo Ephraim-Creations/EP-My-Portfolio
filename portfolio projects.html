@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Other head elements like title and link to CSS it (links to social accounts) -->
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Ephraim Mutwiri</title>
+    <style>
+        h2{color: #0ff;}
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+        }
+         
+         .logo-img{
+         width:275px;
+         height: fit-content;
+        }
+
+        .nav {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
+
+
+.nav-links {
+    position: fixed;
+    top: 0;
+   left: -100%;
+    width: 0px;
+    height: 100vh;
+    background: #000000e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-links.show {
+    left: 0;
+}
+
+.nav-links a {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 15px;
+   border-radius: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0ff;
+    color: #000000;
+}
+
+.mobile-menu-toggle {
+    float: right;
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #0ff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 1000px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links a {
+        margin: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+		/*section*/
+        #projects {
+            padding: 15px;
+            text-align: center;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project {
+          color: #fff;
+            background-color: #333;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+      transform:scale(1.01);
+      box-shadow: 0 0px 10px #0ff;
+    }
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+	        height: auto;
+            object-fit: cover;
+
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+			border: 1px solid black;
+        }
+		
+        .project img:hover {
+            transform:scale(1.03);
+        }
+
+
+       #project-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #project-links a {
+            font-size: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid #f9f9f9;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #project-links a:hover {
+            background-color: #0ff;
+            color: #000000;
+        }
+		
+
+        /* Fullscreen Image */
+        #fullScreenImage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #fullScreenImage img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+		
+		
+/*FOOTER STYLE*/
+.footer {
+    background-color:#000000;
+    color: rgb(255, 255, 255); /* White text */
+    text-align: center; /* Centered text */
+    padding: 7px; /* Padding for footer */
+    position: relative; /* Ensure footer stays at the bottom */
+	height:fit-content;
+}
+
+.footer-links {
+    margin-bottom: 0px; /* Space below the links */
+}
+
+.footer-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+#contact-info {
+    text-align: center; /* Center text */
+	color:#fff;
+}
+
+
+
+.social-icons { justify-content: center;
+      display: flex;
+      gap: 10px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0px 40px #0ff;
+    }
+    .social-icons a.facebook {
+      background-color: #4267B2;
+    }
+    .social-icons a.twitter {
+      background-color: #1DA1F2;
+    }
+    .social-icons a.instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+    .social-icons a.linkedin {
+      background-color: #0077B5;
+    }
+    .social-icons a.youtube {
+      background-color: #FF0000;
+    }
+    .social-icons a.tiktok {
+      background-color: #222;
+    }
+
+.contact-details p {
+    font-size: 1.2em; /* Font size for email and phone */
+    color: #fff; /* Darker color for text */
+}
+
+.contact-details a {font-size: 1.1em;
+color: #0ff;
+text-decoration: none;}
+
+.contact-details a:hover{ color:#007BFF;
+text-decoration: none;}
+
+
+    </style>
+  
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div>           
+                <a href="Contact Ephraim.html">
+                    <img src="New logo.jpg" class="logo-img">
+                </a>
+            </div><!--logo division-->
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+              <a href="index.html">Home</a>
+              <a href="About Ephraim.html">About</a>
+              <a href="serviices.html">Services</a>
+              <a href="portfolio projects.html">Portfolio</a>
+              <a href="Contact Ephraim.html">Contact</a>
+              <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+            </div>
+        </nav>
+        </header>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+                if (navLinks.classList.toggle('active')) {
+                    menuToggle.textContent = 'x';
+                } else {
+                    menuToggle.textContent = '☰';
+                }
+            });
+        </script>
+  
+    <!-- Header -->
+
+
+    <!-- Portfolio Section -->
+
+  <section id="projects">
+    <h2>My recent projects</h2>
+    <p><i style="color: #ccc;">click image to view fullscreen</i></p>
+    <br>
+    <br>
+    <div class="projects">
+        <div class="project"><!--Remove this and add DEVERONIG DIGITAL ELECTRONICS...-->
+            <img src="devdev.jpg" alt="Deveronig Digital(An online store)" onclick="openFullScreen(this)">
+            <h3>Deveronig Digital</h3>
+            <p>This is a shop website.Customers buy online</p>
+            <div id="project-links">
+            <a href="https://deveronigdigitalelectronics.co.ke/" target="_blank">Go to site</a>
+            </div>
+        </div>     
+        
+        <div class="project">
+            <img src="campus-konnect.jpg" alt="campus-konnect" onclick="openFullScreen(this)">
+            <h3>Campus Konnect</h3>
+            <p>This is a youth podcast website.</p>
+            <div id="project-links">
+              <p style="color: red;">Comming soon!!</p>
+            </div>
+        </div>	
+
+        <div class="project">
+          <img src="ec.jpg" alt="Ephraim Creations" onclick="openFullScreen(this)">
+          <h3>Ephraim Creations</h3>
+          <p>This is my website design agency</p>
+          <div id="project-links">
+          <a href="https://www.ephraimcreations.online/" target="_blank">Go to site</a>
+          </div>
+      </div>  
+
+    </div>
+</section>
+    <section id="projects">
+ 
+        <div class="projects">
+
+            <div class="project">
+                <img src="services EC.jpg" alt="Services at Ephraim Creations" onclick="openFullScreen(this)">
+                <h3>Web and graphic design services</h3>
+                <p>View some of our services. Make orders(book) in one place.
+				You can contact me to learn more.</p>
+				<div id="project-links">
+				<a href="https://www.ephraimcreations.online/book-online" target="_blank">Go to site</a>
+				</div>
+            </div>   
+
+            <div class="project">
+                <img src="techshedd.jpg" alt="TechShed(An online store)" onclick="openFullScreen(this)">
+                <h3>TechShed shop</h3>
+                <p>This is an electronic shop website.Customers buy online</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/electronic-store" target="_blank">Go to site</a>
+				</div>
+            </div>    
+			
+            <div class="project">
+                <img src="criticall builders.png" alt="Critical builders" onclick="openFullScreen(this)">
+                <h3>Building store</h3>
+                <p>This is a building store website</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/criticalbuilders" target="_blank">Go to site</a>
+				</div>
+            </div>	
+        </div>
+    </section>
+	
+	
+		<!--The second layer of portfolio-->
+    <section id="projects">
+
+        <div class="projects">
+            <div class="project">
+                <img src="tg pc.jpg" alt="Traveling Goru website" onclick="openFullScreen(this)">
+                <h3>Traveling Guru</h3>
+                <p>This is a travelling agency website.</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/travelingguru" target="_blank">Go to site</a>
+				</div>
+            </div>    
+			
+
+            <div class="project">
+                <img src="MY SITE(3).png" alt="OnlineSchool" onclick="openFullScreen(this)">
+                <h3>Online School</h3>
+                <p>This is a School website.Classes are online</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/mysite-1" target="_blank">Go to site</a>
+				</div>
+            </div>     
+			
+
+            <div class="project">
+                <img src="Fun&rest.jpg" alt="Fun & rest website(restaurant)" onclick="openFullScreen(this)">
+                <h3>Have fun in this website</h3>
+                <p>Yes! it is fun and rest. A restaurant website</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/fun-and-rest" target="_blank">Go to site</a>
+				</div>
+            </div>	
+        </div>
+    </section>
+	
+	<!--Third layer-->
+	    <section id="projects">
+        <div class="projects">
+
+            <div class="project">
+                <img src="shop.png" alt="Shop 8(An online store)" onclick="openFullScreen(this)">
+                <h3>Online shop</h3>
+                <p>This is a shop website.Customers buy online</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/shop" target="_blank">Go to site</a>
+				</div>
+            </div>    
+
+            <div class="project">
+                <img src="book store.jpg" alt="An online book store" onclick="openFullScreen(this)">
+                <h3>An online book store</h3>
+                <p>This is an online book store. Visit to purchase.</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/my-book-store" target="_blank">Go to site</a>
+				</div>
+            </div>
+
+            <div class="project">
+               <h1 style="color:red;">STAY TUNED</h1>
+                <h3>More Updates are coming</h3>
+<p>Exciting updates are on the way! I am 
+    working hard behind the scenes to bring you fresh content,
+    including a showcase of my latest website design projects. My
+    portfolio will feature a range of creative designs tailored to
+    meet diverse client needs, giving you a glimpse of the quality and
+    craftsmanship I deliver. Stay tuned as I roll out these updates soon,
+     and discover how I can help bring your vision to life.
+</p> 
+				</div>
+            </div>	
+        </div>
+    </section>
+
+    <!-- Full Screen Image Container -->
+    <div id="fullScreenImage">
+        <span id="closeBtn" onclick="closeFullScreen()">&#x2716;</span>
+        <img src="" id="fullImg" alt="Fullscreen Image">
+    </div>
+
+      <!--FOOTER SECTION-->  <footer class="footer">
+  <section id="contact-info">
+    <h2>On socials</h2>
+            <!-- Social Media Links with Icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+              </div>
+       
+        </section>
+    <!--contact details-->
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out for collaborations or project enquiries.</p>
+    <div class="contact-details">
+        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+        <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+    </div>
+    <br>	
+        <div class="copyright">
+          &copy; 2024-2025 Ephraim Mutwiri.<br>
+           A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+            <br><br><b>Reproduction of content strictly prohibited.</b>
+        </div>
+        <br>
+    </footer>
+
+
+	
+
+    <script>
+        function openFullScreen(image) {
+            document.getElementById("fullImg").src = image.src;
+            document.getElementById("fullScreenImage").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullScreenImage").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
