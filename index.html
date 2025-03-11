@@ -296,7 +296,8 @@
         }
 		
 
-        /* Fullscreen Image 4 ortfolio and about*/
+ 
+        /* Fullscreen Image */
         #fullScreenImage {
             display: none;
             position: fixed;
@@ -304,7 +305,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.968);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -315,12 +316,16 @@
         }
         #closeBtn {
             position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #fff;
+            top: 20px;  
+            justify-content: center;
+            color: rgb(255, 0, 0);
             font-size: 2rem;
             cursor: pointer;
             z-index: 1001;
+            margin-bottom: 15px;
+        }
+		#closeBtn:hover{
+            color: rgb(26, 255, 106);
         }
 		
 
@@ -709,9 +714,9 @@ I have a team of 5 and we run an agency called <a href="https://www.ephraimcreat
 
     <!-- Full Screen Image Container -->
     <div id="fullScreenImage">
-        <span id="closeBtn" onclick="closeFullScreen()">&#x2716;</span>
-        <img src="" id="fullImg" alt="Fullscreen Image">
-    </div>
+      <span id="closeBtn" onclick="closeFullScreen()">&#x2716;close</span>
+      <img src="" id="fullImg" alt="Fullscreen Image">
+  </div>
 
     <script>
         function openFullScreen(image) {
