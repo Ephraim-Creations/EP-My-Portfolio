@@ -2,28 +2,21 @@
 <html lang="en">
 <head>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SERVICES | Ephraim Mutwiri</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: #111;
-
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | Ephraim Mutwiri</title>
+    <style>
         /* General Styles */
+        h2{color: #0ff;}
         body {
             margin: 0;
+            padding: 0px;
+            justify-content: center;
             font-family: Arial, sans-serif;
-            background-color: #e8d9d9;
+            background-color: #111;
 
         }
-        
-        
+
         header {
             background-color: #000000;
             color: white;
@@ -31,6 +24,7 @@
             display: flex;
             justify-content: center;
             justify-items: center;
+
         }
          
          .logo-img{
@@ -43,6 +37,7 @@
     gap: 0px;
     align-items: center;
 }
+
 
 .nav-links {
     position: fixed;
@@ -125,96 +120,183 @@
     }
 }
 
-
-/*style sections*/
-    .services-section {
+/*STYLE FOR SECTIONS*/
+.hero {
       text-align: center;
-      padding: 15px;
-      background-color: #111;
+      padding: 50px 20px;
+      background-color: #0ff;
+      color: #000000;
+      height: fit-content;
     }
-    .services-section h2 {
-      font-size: 2.5rem;
-      color: #0ff;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
-    .services-section p{
-      color: #fff;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 20px;
     }
-
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    .service-card {
-      background: #333;
-      border-radius: 8px;
-      width: 400px;
-  /*enter height*/
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      box-shadow: 0 0px 10px #0ff;
-      transform:scale(1.01);
-    }
-    .service-card img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+    .hero a {
+      display: inline-block;
+      background: #0ff;
+      border:1px solid #000000;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      cursor: pointer;
-      border: 1px solid #0ff;
+      transition: background 0.5s ease;
     }
-    .service-card h3 {
-      margin: 15px 0 10px;
-      font-size: 1.5rem;
-      color: #0ff;
-    }
-    .service-card p {
-      font-size: 1rem;
-      color: #fff;
+    .hero a:hover {
+      background: #000000;
+      color: #ffffff;
     }
 
-/*order buttons*/
-.buttons {
-  margin-top: 10px;
+  /*style 4 about section*/
+  /* About Section Base Styles */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 40px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 14px;
-  font-weight: bold;
+/* About Text Styling */
+.about-text {
+  flex: 1;
+  max-width: 800px;
+  color: #fff;
+}
+
+.about-text h2{
+  font-size: 39px;
+  color: #0ff;
+}
+
+.about-text p{
+  font-size: 25px;
+}
+.about-text a{
+  color: #fff;
   text-decoration: none;
+  padding: 10px 5px;
+  border: 1px solid #fff;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
+}
+.about-text a:hover{
+  background-color: #0ff;
+  color: #000000;
+  border: 0;
+}
+/* About Image Styling */
+#about-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+ cursor: pointer;
 }
 
-/* Style for the Call button */
-.call-btn {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-}
-.call-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+#about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: adds a slight rounding to corners */
 }
 
-/* Style for the WhatsApp button */
-.whatsapp-btn {
-  background-color: #25d366;
-  color: #fff;
-  border: none;
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-text,
+  #about-image {
+    width: 100%;
+  }
 }
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.05);
-}
+
+    /*style for the projects*/
+		/*section*/
+    #projects {
+            padding: 15px;
+            text-align: center; 
+        }
+
+   #projects a{
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 10px 5px;
+    }
+    #projects a:hover {
+            background-color: #0ff;
+            color: #000000;
+            border: 0;
+        }
 
     
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;}
+        
+        .project {
+          color: #fff;
+            background-color: #333;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+      transform:scale(1.01);
+      box-shadow: 0 0px 10px #0ff;
+    }
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+	        height: auto;
+            object-fit: cover;
+
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+			border: 1px solid black;
+        }
+		
+        .project img:hover {
+            transform:scale(1.03);
+        }
+
+
+       #project-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #project-links a {
+            font-size: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid #f9f9f9;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #project-links a:hover {
+            background-color: #0ff;
+            color: #000000;
+        }
+		
+
+ 
         /* Fullscreen Image */
         #fullScreenImage {
             display: none;
@@ -246,13 +328,100 @@
             color: rgb(26, 255, 106);
         }
 		
-        
-            /*FOOTER STYLE*/
-            .footer {
+
+
+
+/*STYLES FOR THE FAQ SECTION*/
+.faq-section {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom:none ;
+}
+
+.faq-question {color: #0ff;
+  width: 100%;
+  background-color: #333;
+  border: 0px solid #ffe0f6;
+  outline: none;
+  padding: 15px 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+
+}
+.faq-question:hover {
+  color: #000000;
+  background-color: #0ff;
+    transform: translateX(5px); /* Lift the box on hover */
+    box-shadow: 0 0px 10px #0ff; /* Add shadow on hover */
+}
+
+
+.faq-icon {
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+  border-left: 3px solid #007bff;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+.faq-answer ol{color: #fff;}
+.button{
+    display: inline-block;
+      background: #ffffff;
+      border:1px solid #000000;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.5s ease;
+}
+
+.button:hover {
+      background: #464646;
+      color: #ffffff;}
+
+.faq-question.active .faq-icon {
+  transform:none 
+
+}
+
+.faq-question.active + .faq-answer {
+  max-height: 150px; /* Adjust based on content */
+}
+
+
+        /*FOOTER STYLE*/
+        .footer {
     background-color:#000000;
     color: rgb(255, 255, 255); /* White text */
     text-align: center; /* Centered text */
-    padding: 7px; /* Padding for footer */
+    padding: 2px; /* Padding for footer */
     position: relative; /* Ensure footer stays at the bottom */
 	height:fit-content;
 }
@@ -276,16 +445,18 @@
 	color:#fff;
 }
 
+
+
 .social-icons { justify-content: center;
       display: flex;
-      gap: 15px;
+      gap: 10px;
     }
     .social-icons a {
       text-decoration: none;
       color: white;
       width: 50px;
-      font-size: 1.8rem;
       height: 50px;
+      font-size: 1.8rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -316,7 +487,6 @@
       background-color: #222;
     }
 
-    
 .contact-details p {
     font-size: 1.2em; /* Font size for email and phone */
     color: #fff; /* Darker color for text */
@@ -328,177 +498,219 @@ text-decoration: none;}
 
 .contact-details a:hover{ color:#007BFF;
 text-decoration: none;}
-  </style>
 
-
+    </style>
 </head>
 <body>
-  <header>
-    <center>
-    <nav class="nav">
-      <div>           
-        <a href="Contact Ephraim.html">
-            <img src="New logo.jpg" class="logo-img">
-        </a>
-    </div><!--logo division-->
-      <button class="mobile-menu-toggle" id="menuToggle">☰</button>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html">Home</a>
-          <a href="About Ephraim.html">About</a>
-          <a href="serviices.html">Services</a>
-          <a href="portfolio projects.html">Portfolio</a>
-          <a href="Contact Ephraim.html">Contact</a>
-          <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+
+   <header>
+      <nav class="nav">
+        <div>           
+          <a href="Contact Ephraim.html">
+              <img src="New logo.jpg" class="logo-img">
+          </a>
+      </div><!--logo division-->
+        <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="About Ephraim.html">About</a>
+            <a href="serviices.html">Services</a>
+            <a href="portfolio projects.html">Portfolio</a>
+            <a href="Contact Ephraim.html">Contact</a>
+            <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+          </div>
+      </nav>
+      </header>
+      <script>
+          const menuToggle = document.getElementById('menuToggle');
+          const navLinks = document.getElementById('navLinks');
+  
+          menuToggle.addEventListener('click', () => {
+              navLinks.classList.toggle('show');
+              if (navLinks.classList.toggle('active')) {
+                  menuToggle.textContent = 'x';
+              } else {
+                  menuToggle.textContent = '☰';
+              }
+          });
+      </script>
+
+
+<!--BODY SECTION-->
+<section id="hero" class="hero">
+    <h1>Creative Solutions for Your Needs</h1>
+    <p>Delivering high-quality web design, development, and digital solutions tailored to your needs.</p>
+    <a href="Contact Ephraim.html">Get in Touch</a>
+  </section>
+
+ 
+
+<!--About section-->
+  <section id="about">
+    <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      Hey there! I’m Ephraim, <b>the creative mind behind Ephraim Creations.</b> I’m passionate about transforming digital dreams into vibrant realities. By blending modern technology with timeless design, I craft websites that are not just visually stunning but also deeply engaging.
+    </p>
+    <p>
+      Every project is a journey of discovery and innovation, where your unique story comes to life in every pixel. Step into a world where your online presence isn’t just built—it’s felt.
+    </p>
+    
+    
+    <br>
+    <a href="Contact Ephraim.html">Get In Touch</a>
+    </div>
+    <div id="about-image">
+        <img src="Ephraim.jpg" onclick="openFullScreen(this)">
+    </div>
+  </section>
+
+
+  <!--portfolio section-->
+  <section id="projects">
+    <h2>Some recent projects</h2>
+    <div class="projects">
+        <div class="project"><!--Remove this and add DEVERONIG DIGITAL ELECTRONICS...-->
+            <img src="devdev.jpg" alt="Deveronig Digital(An online store)" onclick="openFullScreen(this)">
+            <h3>Deveronig Digital</h3>
+            <p>This is a shop website.Customers buy online</p>
+            <div id="project-links">
+            <a href="https://deveronigdigitalelectronics.co.ke/" target="_blank">Go to site</a>
+            </div>
+        </div>     
+        
+        <div class="project">
+            <img src="campus-konnect.jpg" alt="campus-konnect" onclick="openFullScreen(this)">
+            <h3>Campus Konnect</h3>
+            <p>This is a youth podcast website. I am also a host</p>
+            <div id="project-links">
+              <p style="color: red;">Comming soon!!</p>
+            </div>
+        </div>	
+
+        <div class="project">
+          <img src="ec.jpg" alt="Ephraim Creations" onclick="openFullScreen(this)">
+          <h3>Ephraim Creations</h3>
+          <p>This is my website design agency</p>
+          <div id="project-links">
+          <a href="https://www.ephraimcreations.online/" target="_blank">Go to site</a>
+          </div>
+      </div> 
+    </div>
+    <br>
+    <a href="portfolio projects.html">Load More</a>
+</section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Which services do you offer?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p> I offer custom website design and Graphic design using latest technologies
+            contact me for your: </p>
+            <ol>
+              <li>logo</li>
+              <li>poster</li>
+              <li>flyer</li>
+              <li>wedding cards</li>
+              <li>invitation cards</li>
+              <li>magazine/book covers</li>
+              <li>website (new design)</li>
+              <li>website design (existing website)</li>
+              <li>website consultancy( new & existing websites)</li>
+              <li>website auditing (learn how to better your site)</li>
+            </ol>
+            <p>
+I have a team of 5 and we run an agency called <a href="https://www.ephraimcreations.online" target="_blank"  style="text-decoration: none; color:#002fff;">Ephraim creations</a>
+            We offer website design, development, and other digital services tailored to your needs.</p>
+            <a href="https://www.ephraimcreations.online" target="_blank" rel="noopener noreferrer" class="button">Visit Ephraim creations</a>
+            <br>
+            <br>
+      </div>
+    </div>
+  
+
+    <div class="faq-item">
+        <button class="faq-question">
+      <span>How can I order your services?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>You can directly call me or WhatsApp me to talk about your needs via my cellphone number; or 
+            order services from Ephraim Creations.
+          </p>
+          <a href="tel:+254112268873" class="button">📞 Call Now</a> 
+          <a href="https://www.ephraimcreations.online/book-online" target="_blank" rel="noopener noreferrer" class="button">View and order services</a>
         </div>
-    </nav></center>
-    </header>
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            if (navLinks.classList.toggle('active')) {
-                menuToggle.textContent = 'x';
-            } else {
-                menuToggle.textContent = '☰';
-            }
-        });
-    </script>
+      </div>
 
 
-<div class="services-section"><!--First row-->
-  <h2>My Services</h2>
-  <p>For inquiries, please call or message via WhatsApp using the buttons below.</p>
-  <div class="services-container">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <img src="logo design.jpg" alt="Logo design" onclick="openFullScreen(this)">
-      <h3>Logo design</h3>
-      <p>I create modern logos tailored to your brand representation.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
+    <div class="faq-item">
+      <button class="faq-question">
+    <span>How much for a website?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I dont charge a constant amount of money for your website design. <br>
+          Services charges depend on the complexity of your website or any project;<br>
+          the lesser the content, functions and products (in e-commerce) the cheaper the service and vice versa...<br>
+          <br>Compare the website prices suitable for your brand Now at Ephraim Creations.
+        </p>
+        <a href="https://www.ephraimcreations.online/website-pricing" target="_blank" rel="noopener noreferrer" class="button">View & Compare prices</a>
       </div>
     </div>
-    <!-- Service 2 -->
-    <div class="service-card">
-      <img src="poster design.jpg" alt="poster design" onclick="openFullScreen(this)">
-      <h3>Poster design</h3>
-      <p>I create modern posters tailored to your needs.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How do you work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <span class="faq-icon"></span>
+        <p>As Ephraim I work individualy but as a <b style="color: #0004ff;">Ephraim Creation</b> we work as a team.<br>
+          <br>
+       <u>Charges</u>
+       <br> 
+       In most cases a client will pay a certain percentage of the agreed amount before starting their
+        project and finalize payment after I deliver their work...
+        <br>
+        <br>
+        <u>Delivery of work</u><br>
+        For the files(e.g. posters and flyers) I share in an agreed format/extension <i style="color: #0004ff;">e.g.PNG, JPG or PDF</i>
+        <br>
+        <br>
 
-    <!-- Service 3 -->
-    <div class="service-card">
-      <img src="wedding card.png" alt="wedding cards" onclick="openFullScreen(this)">
-      <h3>Wedding Cards design</h3>
-      <p>I create stunning cards for your weddings. A happy wedding day starts here!</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
+        In website Development, I will send the codes<i style="color: #0004ff;"> e.g. HTML or CSS</i>
+        <br>
+        <br>
+        In website Design, I will work using your<i style="color: #0004ff;"> WordPress, Wix or any other CMS</i>
+        </p>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="services-section"><!--second row-->
-  <div class="services-container">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <img src="web design.jpg" alt="Website design" onclick="openFullScreen(this)">
-      <h3>website (new) design</h3>
-      <p>I will create a new website for you or your business</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-    <!-- Service 2 -->
-    <div class="service-card">
-      <img src="website redisign.jpg" alt="web redesign" onclick="openFullScreen(this)">
-      <h3>Website redesign</h3>
-      <p>I re-create/re-structure your website(personal/business) to a style that will create a good user experience.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-    <!-- Service 3 -->
-    <div class="service-card">
-      <img src="ecommerce.jpg" alt="e-commerce design" onclick="openFullScreen(this)">
-      <h3>E-commerce solutions</h3>
-      <p>I create modern & effective online stores with secure payment options.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="services-section"><!--3rd row-->
-  <div class="services-container">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <img src="web audit.jpg" alt="Website auditing" onclick="openFullScreen(this)">
-      <h3>Website Auditing</h3>
-      <p>I get into your website, analyze the functions and come up with ways to better the website.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-    <!-- Service 2 -->
-    <div class="service-card">
-      <img src="web consult.jpg" alt="website consultation" onclick="openFullScreen(this)">
-      <h3>Website consultation</h3>
-      <p>I am available for consultations when you are seeking information/knowledge about websites.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-    <!-- Service 3 -->
-    <div class="service-card">
-      <img src="seo.jpg" alt="web SEO" onclick="openFullScreen(this)">
-      <h3>Website SEO</h3>
-      <p>I do Search Engine Optimization for all your Wix and WordPress websites. This helps you rank higher on search engines and attract customers.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="services-section"><!--4th row-->
-  <div class="services-container">
-    <!-- Service 1 -->
-    <div class="service-card">
-      <img src="coding service.jpg" alt="Front-End services" onclick="openFullScreen(this)">
-      <h3>Front-End coding services</h3>
-      <p>I create modern websites by coding. The websites can be personal or business portfolios.</p>
-      <div class="buttons">
-        <p style="color: #0ff;">Get in touch to order.</p>
-        <a href="tel:+254112268873" class="btn call-btn">Call</a>
-        <a href="https://wa.me/254112268873" class="btn whatsapp-btn" target="_blank">WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
+<!--below is the FAQ button function-->
+<script>
+    const faqItems = document.querySelectorAll(".faq-question");
+  
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+  
+        const icon = item.querySelector(".faq-icon");
+        icon.textContent = item.classList.contains("active") ? "-" : "+";
+  
+        const answer = item.nextElementSibling;
+        if (item.classList.contains("active")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = 0;
+        }
+      });
+    });
+  </script>
 
 
     <!-- Full Screen Image Container -->
@@ -507,48 +719,52 @@ text-decoration: none;}
       <img src="" id="fullImg" alt="Fullscreen Image">
   </div>
 
-  <!--FOOTER SECTION-->
-  <footer class="footer">
+    <script>
+        function openFullScreen(image) {
+            document.getElementById("fullImg").src = image.src;
+            document.getElementById("fullScreenImage").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullScreenImage").style.display = "none";
+        }
+    </script>
+  
+  
+
+
+
+  <!--FOOTER SECTION-->  <footer class="footer">
     <section id="contact-info">
-  <h2>On socials</h2>
-          <!-- Social Media Links with Icons -->
-          <div class="social-icons">
-            <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-          </div>
-      </section>
-  <!--contact details-->
-  <h2>Contact Me</h2>
-  <p>Feel free to reach out for collaborations or project enquiries.</p>
-  <div class="contact-details">
-      <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-      <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-      <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
-  </div>
-  <br>	
-      <div class="copyright">
-        &copy; 2024-2025 Ephraim Mutwiri.<br>
-         A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
-          <br><br><b>Reproduction of content strictly prohibited.</b>
+      <h2>On socials</h2>
+              <!-- Social Media Links with Icons -->
+              <div class="social-icons">
+                  <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+         
+          </section>
+      <!--contact details-->
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for collaborations or project enquiries.</p>
+      <div class="contact-details">
+          <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+          <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+          <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
       </div>
-      <br>
-  </footer>
-
-  <!--This function opens the full screen image-->
-  <script>
-    function openFullScreen(image) {
-        document.getElementById("fullImg").src = image.src;
-        document.getElementById("fullScreenImage").style.display = "flex";
-    }
-
-    function closeFullScreen() {
-        document.getElementById("fullScreenImage").style.display = "none";
-    }
-</script>
-
-</body>
-</html>
+      <br>	
+          <div class="copyright">
+            &copy; 2024-2025 Ephraim Mutwiri.<br>
+             A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+              <br><br><b>Reproduction of content strictly prohibited.</b>
+          </div>
+          <br>
+      </footer>
+    
+  </body>
+  
+  </html>
