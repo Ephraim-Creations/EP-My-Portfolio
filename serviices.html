@@ -136,6 +136,10 @@
       font-size: 2.5rem;
       color: #0ff;
     }
+    .services-section p{
+      color: #fff;
+    }
+
     .services-container {
       display: flex;
       flex-wrap: wrap;
@@ -219,7 +223,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.968);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -230,12 +234,16 @@
         }
         #closeBtn {
             position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #fff;
+            top: 20px;  
+            justify-content: center;
+            color: rgb(255, 0, 0);
             font-size: 2rem;
             cursor: pointer;
             z-index: 1001;
+            margin-bottom: 15px;
+        }
+		#closeBtn:hover{
+            color: rgb(26, 255, 106);
         }
 		
         
@@ -493,11 +501,9 @@ text-decoration: none;}
 </div>
 
 
-
-
     <!-- Full Screen Image Container -->
     <div id="fullScreenImage">
-      <span id="closeBtn" onclick="closeFullScreen()">&#x2716;</span>
+      <span id="closeBtn" onclick="closeFullScreen()">&#x2716;close</span>
       <img src="" id="fullImg" alt="Fullscreen Image">
   </div>
 
