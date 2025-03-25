@@ -1,455 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Other head elements like title and link to CSS it (links to social accounts) -->
-      <link rel = "icon" href = "Untitled design (1).png"> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT | Ephraim Mutwiri</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-        }
-
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            justify-items: center;
-        }
-         
-        .logo-img {
-            width: 275px;
-            height: fit-content;
-        }
-
-        .nav {
-            display: flex;
-            gap: 0px;
-            align-items: center;
-        }
-
-        .nav-links {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 0px;
-            height: 100vh;
-            background: #000000e5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: left 0.3s ease;
-            z-index: 1000;
-        }
-
-        .nav-links.show {
-            left: 0;
-        }
-
-        .nav-links a {
-            margin: 10px 0;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 15px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #0ff;
-            color: #000000;
-        }
-
-        .mobile-menu-toggle {
-            float: right;
-            display: none;
-            font-size: 2rem;
-            color: #000000;
-            background-color: #0ff;
-            padding: 10px 14px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        @media (max-width: 1000px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-            .nav-links {
-                width: 60%;
-            }
-        }
-
-        @media (min-width: 1000px) {
-            .nav-links {
-                position: static;
-                width: auto;
-                height: auto;
-                background: none;
-                display: flex;
-                flex-direction: row;
-            }
-            .nav-links a {
-                margin: 0 1rem;
-            }
-            .mobile-menu-toggle {
-                display: none;
-            }
-        }
-
-        #about {
-            background-color: #0ff;
-            max-width: 100%;
-            height: fit-content;
-            justify-content: center;
-            justify-items: center;
-            padding: 20px;
-        }
-        #about h2 {
-            font-size: 2.0rem;
-            color: #111;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        #about p {
-            font-size: 1.2rem;
-            color: #111;
-            text-align: center;
-            line-height: 1.5;
-        }
-        .contact-section {
-            margin: 100px auto 50px;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: 100%;
-        }
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="Untitled design (1).png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT | Ephraim Mutwiri</title>
+  <style>
+    /* Reset & Global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #000;
+      overflow-x: hidden;
+      padding-top: 100px; /* space for fixed header */
+    }
     
-        .contact-container {
-            text-align: left;
-            color: #0ff;
-            background: rgba(0, 0, 0, 0.493);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 0 auto;
-            width:1000px;
-        }
-
-        /* Ensure inputs take full width and include padding within the width */
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
+    /* Header & Navigation */
+    header {
+      background-color: #000;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 100px;
+      transition: transform 0.3s ease-in-out;
+    }
+    header.hidden {
+      transform: translateY(-100%);
+    }
+    .nav {
+      max-width: 1500px;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      height: fit-content;
+    }
+    .nav a {
+      text-decoration: none;
+    }
+    .logo-img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 50px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      padding: 5px 10px;
+      color: #fff;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      background-color: #8A2BE2;
+      padding: 5px 10px;
+      color: #fff;
+      border-radius: 10px;
+    }
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .mobile-menu {
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: -75%;
+      width: 75%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.94);
+      z-index: 20;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: left 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      left: 0;
+    }
+    .mobile-menu a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+    .mobile-menu a:hover {
+      background-color: #8A2BE2;
+      padding: 5px 10px;
+      color: #fff;
+      border-radius: 10px;
+    }
     
-        .contact-form h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+    /* About Section */
+    #about {
+      background: linear-gradient(45deg, #360862, #780a41);
+      max-width: 100%;
+      height: fit-content;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    #about h2 {
+      font-size: 2rem;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+    #about p {
+      font-size: 1.2rem;
+      color: #000000;
+      line-height: 1.5;
+    }
     
-        .form-group {
-            margin-bottom: 20px;
-        }
+    /* Contact Section */
+    .contact-section {
+      margin: 60px auto 50px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      max-width: 1000px;
+    }
+    .contact-container {
+      background-color: #1a1a1a;
+      text-align: left;
+      color: #8A2BE2;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 0 auto;
+      width: 1000px;
+      box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    /* Animated Gradient Border for Inputs & Textareas */
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      background-image: 
+        linear-gradient(#1a1a1a, #1a1a1a),
+        linear-gradient(45deg, #360862, #780a41);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      background-size: 100% 100%, 400% 400%;
+      animation: borderAnimation 8s linear infinite;
+      color: white;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    @keyframes borderAnimation {
+      0% {
+        background-position: 0% 50%, 0% 50%;
+      }
+      50% {
+        background-position: 0% 50%, 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%, 0% 50%;
+      }
+    }
+    /* Animated Gradient Placeholder for WebKit Browsers */
+    .form-group input::-webkit-input-placeholder,
+    .form-group textarea::-webkit-input-placeholder {
+      background: linear-gradient(45deg, #c689ff, #ff89c4, #c88eff, #ff87c3);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientloop 1s ease-in-out;
+    }
+    @keyframes gradientLoop {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* Standard Placeholder Fallback */
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #bbb;
+    }
+    .contact-form h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #fff;
+    }
+    .submit-btn {
+      background-color: #fff;
+      color: #000;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 10px;
+      transition: 0.3s ease;
+    }
+    .submit-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+    }
+    .success-message {
+      display: none;
+      color: #FF0080;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 15px;
+    }
+    .error-message {
+      display: none;
+      color: #f00;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 10px;
+    }
     
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
- 
-        .submit-btn {
-            background-color: white;
-            color: black;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto 10px;
-            transition: 0.3s ease;
-        }
+    /* Footer Styles */
+    .footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2px;
+      position: relative;
+      height: fit-content;
+    }
+    .footer-links {
+      margin-bottom: 0;
+    }
+    .footer-links a {
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #FF0080;
+    }
+    #contact-info {
+      text-align: center;
+      color: #fff;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 40px #8A2BE2;
+    }
+    .social-icons a.facebook { background-color: #4267B2; }
+    .social-icons a.twitter { background-color: #1DA1F2; }
+    .social-icons a.instagram { 
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+    .social-icons a.linkedin { background-color: #0077B5; }
+    .social-icons a.youtube { background-color: #FF0000; }
+    .social-icons a.tiktok { background-color: #222; }
+    .contact-details p {
+      font-size: 16px;
+      color: #fff;
+    }
+    .contact-details a {
+      font-size: 1.1em;
+      color: #8A2BE2;
+      text-decoration: none;
+    }
+    .contact-details a:hover {
+      color: #FF0080;
+      text-decoration: none;
+    }
     
-        .submit-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-        }
+    /* MEDIA QUERIES FOR RESPONSIVENESS */
+    /* Tablet devices (max-width: 768px) */
+    @media (max-width: 768px) {
+      /* Header Adjustments */
+      header { padding: 10px 15px; }
+      .logo-img { max-width: 160px; }
+      .nav { gap: 30px; }
+      /* Hide desktop nav and show mobile toggle */
+      .nav-links { display: none; }
+      .mobile-menu-toggle { display: block; }
+      
+      /* Contact Container */
+      .contact-container {
+        width: 100%;
+        padding: 20px;
+        margin: 20px auto;
+      }
+      .contact-form h2 { font-size: 2rem; }
+      .form-group label { font-size: 1rem; }
+      .form-group input,
+      .form-group textarea { font-size: 0.9rem; padding: 10px; }
+      .submit-btn { padding: 12px 30px; font-size: 1rem; }
+    }
     
-        .success-message {
-            display: none;
-            color: #0f0;
-            font-size: 1.2rem;
-            text-align: center;
-            margin-top: 15px;
-        }
-    
-        .error-message {
-            display: none;
-            color: #f00;
-            font-size: 1rem;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* Adjust form container width for small devices */
-        @media (max-width: 600px) {
-            .contact-container {
-                width: 80%;
-                padding: 20px;
-                margin: 0 10px;
-            }
-            .contact-form h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* FOOTER STYLE */
-        .footer {
-            background-color: #000000;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            padding: 7px;
-            position: relative;
-            height: fit-content;
-        }
-
-        .footer-links {
-            margin-bottom: 0px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #007BFF;
-        }
-
-        #contact-info {
-            text-align: center;
-            color: #fff;
-        }
-
-        .social-icons {
-            justify-content: center;
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: white;
-            width: 50px;
-            height: 50px;
-            font-size: 1.8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            border: 1px solid #fff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0px 40px #0ff;
-        }
-
-        .social-icons a.facebook {
-            background-color: #4267B2;
-        }
-
-        .social-icons a.twitter {
-            background-color: #1DA1F2;
-        }
-
-        .social-icons a.instagram {
-            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
-        }
-
-        .social-icons a.linkedin {
-            background-color: #0077B5;
-        }
-
-        .social-icons a.youtube {
-            background-color: #FF0000;
-        }
-
-        .social-icons a.tiktok {
-            background-color: #222;
-        }
-
-        .contact-details p {
-            font-size: 1.2em;
-            color: #fff;
-        }
-
-        .contact-details a {
-            font-size: 1.1em;
-            color: #0ff;
-            text-decoration: none;
-        }
-
-        .contact-details a:hover {
-            color: #007BFF;
-            text-decoration: none;
-        }
-    </style>
+    /* Mobile devices (max-width: 480px) */
+    @media (max-width: 480px) {
+      header { padding: 8px 10px; }
+      .mobile-menu-toggle { font-size: 24px; right: 10px; }
+      .logo-img { max-width: 140px; }
+      /* About Section adjustments */
+      #about { padding: 40px 10px; }
+      #about h2 { font-size: 1.8rem; }
+      #about p { font-size: 1rem; }
+      /* Contact Section adjustments */
+      .contact-section { padding: 0 10px; }
+      .contact-container { padding: 15px; }
+      .contact-form h2 { font-size: 1.8rem; }
+      .form-group label { font-size: 0.9rem; }
+      .form-group input,
+      .form-group textarea { font-size: 0.85rem; padding: 8px; }
+      .submit-btn { padding: 10px 25px; font-size: 0.95rem; }
+      .contact-details p { font-size: 14px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <div>           
-                <a href="Contact Ephraim.html">
-                    <img src="New logo.jpg" class="logo-img" alt="Logo">
-                </a>
-            </div><!--logo division-->
-            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="About Ephraim.html">About</a>
-                <a href="serviices.html">Services</a>
-                <a href="portfolio projects.html">Portfolio</a>
-                <a href="Contact Ephraim.html">Contact</a>
-                <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
-            </div>
-        </nav>
-    </header>
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-    
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            if (navLinks.classList.toggle('active')) {
-                menuToggle.textContent = 'x';
-            } else {
-                menuToggle.textContent = '☰';
-            }
-        });
-    </script>
-    <main>
 
-            <section id="about">
-                <h2>Contact Me for Your Website Design Needs!</h2>
-                <p>
-                    <b>Are you looking to create a stunning and functional website that stands out?</b><br><br>
-                    As a passionate website designer, I specialize in crafting tailored websites that meet your unique requirements and help your business thrive online.<br><br>
-                    <b>Let’s turn your vision into reality!</b> Feel free to reach out for a free consultation or to discuss your project ideas.<br>
-                    I look forward to working with you...
-                </p>
-            </section>
+  <header id="header">
+    <nav class="nav">
+      <a href="Contact Ephraim.html">
+        <img src="my logo.png" alt="Logo" class="logo-img" />
+      </a>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="menuToggle2">☰</button>
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="About Ephraim.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio projects.html">Portfolio</a>
+        <a href="Contact Ephraim.html">Contact</a>
+        <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+      </div>
+    </nav>
+  </header>
 
-            <section class="contact-section">
-                <div class="contact-container">
-                    <form action="https://formsubmit.co/ephraimmutwiri01@gmail.com" method="POST" class="contact-form" id="contactForm">
-                        <h2>Contact Me...</h2>
+  <!-- Mobile Menu Panel -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="About Ephraim.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio projects.html">Portfolio</a>
+    <a href="Contact Ephraim.html">Contact</a>
+    <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+  </div>
 
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
+  <script>
+    // Toggle mobile menu
+    const menuToggle2 = document.getElementById('menuToggle2');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle2.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuToggle2.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
+    });
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle2.textContent = '☰';
+      });
+    });
+    // Header show/hide on scroll
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
 
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                        </div>
+  <main>
+    <section id="about">
+      <h2>Contact Me for Your Website Design Needs!</h2>
+      <p>
+        <b>Are you looking to create a stunning and functional website that stands out?</b><br><br>
+        As a passionate website designer, I specialize in crafting tailored websites that meet your unique requirements and help your business thrive online.<br><br>
+        <b>Let’s turn your vision into reality!</b> Feel free to reach out for a free consultation or to discuss your project ideas.<br>
+        I look forward to working with you...
+      </p>
+    </section>
 
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
+    <section class="contact-section">
+      <div class="contact-container">
+        <form action="https://formsubmit.co/ephraimmutwiri01@gmail.com" method="POST" class="contact-form" id="contactForm">
+          <h2>Contact Me</h2>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <!-- Hidden fields for better control -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="index.html">
+          <button type="submit" class="submit-btn">Send</button>
+          <p class="success-message" id="successMessage">Message Sent. I'll get back to you in a moment. Redirecting...</p>
+        </form>
+      </div>
+    </section>
 
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+      <section id="contact-info">
+        <h2>On socials</h2>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </section>
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for project enquiries.</p>
+      <div class="contact-details">
+        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+        <p>Order Services: <a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+      </div>
+      <br>
+      <div class="copyright">
+        &copy; 2024-2025 Ephraim Mutwiri.<br>
+        A Website <a href="About Ephraim.html" style="color: #8A2BE2; text-decoration: none;">Designer</a><br><br>
+        <b>Reproduction of content strictly prohibited.</b>
+      </div>
+      <br>
+    </footer>
+  </main>
 
-                        <!-- Hidden fields for better control -->
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="index.html">
-
-                        <button type="submit" class="submit-btn">Send</button>
-                        <p class="success-message" id="successMessage">Message Sent. I'll get back to you in a moment. Redirecting...</p>
-                    </form>
-                </div>
-            </section>
-      
-
-        <!-- FOOTER SECTION -->
-        <footer class="footer">
-            <section id="contact-info">
-                <h2>On socials</h2>
-                <!-- Social Media Links with Icons -->
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </section>
-            <!-- Contact details -->
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations or project enquiries.</p>
-            <div class="contact-details">
-                <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-                <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-                <p>Order Services: <a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
-            </div>
-            <br>	
-            <div class="copyright">
-                &copy; 2024-2025 Ephraim Mutwiri.<br>
-                A Website <a href="About Ephraim.html" style="color: #0ff; text-decoration: none;">Designer</a><br><br>
-                <b>Reproduction of content strictly prohibited.</b>
-            </div>
-            <br>
-        </footer>
-    </main>
-
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            const form = this;
-            
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(form)
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById("successMessage").style.display = "block";
-                    setTimeout(() => {
-                        window.location.href = "index.html"; // Redirect to homepage
-                    }, 5000); // Delay for 4 seconds
-                }
-            }).catch(error => console.error("Form submission error:", error));
-        });
-    </script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("successMessage").style.display = "block";
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 5000);
+        }
+      }).catch(error => console.error("Form submission error:", error));
+    });
+  </script>
+  
 </body>
 </html>
