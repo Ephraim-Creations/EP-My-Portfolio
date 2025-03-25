@@ -4,336 +4,418 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Other head elements like title and link to CSS it (links to social accounts) -->
-	  <link rel = "icon" href = "Untitled design (1).png"> 
+    <link rel = "icon" href = "Untitled design (1).png"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO | Ephraim Mutwiri</title>
     <style>
-        h2{color: #0ff;}
-
-        /* General Styles */
+        h2 {
+          color: #8A2BE2; /* Replaced #0ff with purple */
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          background-color: #000;
+          overflow-x: hidden;
+          /* Give enough top padding so content isn't hidden behind header */
+          padding-top: 100px;
         }
-
+        
+        /* Fixed Header Styles */
         header {
-            background-color: #000000;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            justify-items: center;
+          background-color: #000000;
+          padding: 15px 20px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 30;
+          gap: 100px; 
+          transition: transform 0.3s ease-in-out;
         }
-         
-         .logo-img{
-         width:275px;
-         height: fit-content;
+        
+        /* When header is hidden */
+        header.hidden {
+          transform: translateY(-100%);
         }
-
+        
+        /* Center nav items and limit container to 1500px on PC */
         .nav {
-    display: flex;
-    gap: 0px;
-    align-items: center;
-}
-
-
-.nav-links {
-    position: fixed;
-    top: 0;
-   left: -100%;
-    width: 0px;
-    height: 100vh;
-    background: #000000e5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: left 0.3s ease;
-    z-index: 1000;
-}
-
-.nav-links.show {
-    left: 0;
-}
-
-.nav-links a {
-    margin: 10px 0;
-}
-
-.nav-links a {
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 15px;
-   border-radius: 15px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    background-color: #0ff;
-    color: #000000;
-}
-
-.mobile-menu-toggle {
-    float: right;
-    display: none;
-    font-size: 2rem;
-    color: #000000;
-    background-color: #0ff;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-@media (max-width: 1000px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        width: 60%;
-    }
-}
-
-@media (min-width: 1000px) {
-    .nav-links {
-        position: static;
-        width: auto;
-        height: auto;
-        background: none;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .nav-links a {
-        margin: 0 1rem;
-    }
-
-    .mobile-menu-toggle {
-        display: none;
-    }
-}
-		/*section*/
-        #projects {
-            padding: 15px;
-            text-align: center;
+          max-width: 1500px;
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 60px;
+          position: relative;
+          height: fit-content;
         }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
+        
+        .nav a {
+          text-decoration: none;
+        }
+        
+        /* Increase logo size on desktop */
+        .logo-img {
+          max-width: 200px;
+          width: 100%;
+          height: auto;
+        }
+        
+        /* Desktop Navigation Links */
+        .nav-links {
+          display: flex;
+          gap: 50px;
+        }
+        
+        .nav-links a {
+          text-decoration: none;
+          padding: 5px 10px;
+          color: #fff;
+          font-size: 20px;
+          transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+          background-color: #8A2BE2; /* Purple hover */
+          padding: 5px 10px;
+          color: #000;
+          border-radius: 10px;
+        }
+        
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 28px;
+          color: #fff;
+          cursor: pointer;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        
+        /* Mobile Menu Panel */
+        .mobile-menu {
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          top: 0;
+          left: -75%; /* Hidden offscreen to the left */
+          width: 75%;
+          height: 100vh;
+          background-color: #000000f1;
+          z-index: 20;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          transition: left 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+          left: 0; /* Slides in from the left */
+        }
+        
+        .mobile-menu a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 16px;
+          padding: 5px 10px;
+        }
+        
+        .mobile-menu a:hover {
+          background-color: #8A2BE2; /* Purple hover */
+          padding: 5px 10px;
+          color: #000;
+          border-radius: 10px;
+        }
+        
+        /* Responsive Styles for tablets & below */
+        @media (max-width: 768px) {
+          .nav {
             justify-content: center;
-            gap: 20px;
+          }
+          .nav-links {
+            display: none;
+          }
+          .mobile-menu-toggle {
+            display: block;
+          }
+          .logo-img {
+            max-width: 160px;
+          }
         }
+        
+        /* Portfolio Section */
+        #projects {
+          padding: 15px;
+          text-align: center;
+        }
+        
+        .projects {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+        
         .project {
           color: #fff;
-            background-color: #333;
-            border: 0px solid #ccc;
-            border-radius: 5px;
-            width: 400px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background-color: #333;
+          border: 0px solid #ccc;
+          border-radius: 5px;
+          width: 400px;
+          padding: 20px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
         .project:hover {
-      transform:scale(1.01);
-      box-shadow: 0 0px 10px #0ff;
-    }
+          transform: scale(1.01);
+          box-shadow: 0 0px 10px #8A2BE2; /* Purple glow */
+        }
+        
         .project img {
-            width: 100%;
-            border-radius: 5px;
-	        height: auto;
-            object-fit: cover;
-
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-			border: 1px solid black;
+          width: 100%;
+          border-radius: 5px;
+          height: auto;
+          object-fit: cover;
+          cursor: pointer;
+          transition: transform 0.3s ease-in-out;
+          border: 1px solid black;
         }
-		
+        
         .project img:hover {
-            transform:scale(1.03);
+          transform: scale(1.03);
         }
-
-
-       #project-links {
-            text-align: center;
-            margin-top: 20px;
+        
+        #project-links {
+          text-align: center;
+          margin-top: 20px;
         }
+        
         #project-links a {
-            font-size: 10px;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border: 1px solid #f9f9f9;
-            border-radius: 5px;
-            margin: 0 10px;
-            transition: background-color 0.3s ease-in-out;
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: #ffffff;
+          padding: 10px 20px;
+          border: 1px solid #f9f9f9;
+          border-radius: 5px;
+          margin: 0 10px;
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
+        
         #project-links a:hover {
-            background-color: #0ff;
-            color: #000000;
+          background-color: #8A2BE2; /* Purple hover */
+          color: #000; /* Contrast with dark background */
         }
-		
-
+        
         /* Fullscreen Image */
         #fullScreenImage {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.968);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.968);
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
         }
+        
         #fullScreenImage img {
-            max-width: 90%;
-            max-height: 90%;
+          max-width: 90%;
+          max-height: 90%;
         }
+        
         #closeBtn {
-            position: absolute;
-            top: 20px;  
-            justify-content: center;
-            color: rgb(255, 0, 0);
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 1001;
-            margin-bottom: 15px;
+          position: absolute;
+          top: 20px;  
+          justify-content: center;
+          color: rgb(255, 0, 0);
+          font-size: 2rem;
+          cursor: pointer;
+          z-index: 1001;
+          margin-bottom: 15px;
         }
-		#closeBtn:hover{
-            color: rgb(26, 255, 106);
+        
+        #closeBtn:hover {
+          color: rgb(26, 255, 106);
         }
-		
-/*FOOTER STYLE*/
-.footer {
-    background-color:#000000;
-    color: rgb(255, 255, 255); /* White text */
-    text-align: center; /* Centered text */
-    padding: 7px; /* Padding for footer */
-    position: relative; /* Ensure footer stays at the bottom */
-	height:fit-content;
-}
-
-.footer-links {
-    margin-bottom: 0px; /* Space below the links */
-}
-
-.footer-links a {
-    color: white; /* Link text color */
-    text-decoration: none; /* Remove underline from links */
-    margin: 0 15px; /* Space between links */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-.footer-links a:hover {
-    color: #007BFF; /* Change color on hover */
-}
-
-#contact-info {
-    text-align: center; /* Center text */
-	color:#fff;
-}
-
-
-
-.social-icons { justify-content: center;
-      display: flex;
-      gap: 10px;
-    }
-    .social-icons a {
-      text-decoration: none;
-      color: white;
-      width: 50px;
-      height: 50px;
-      font-size: 1.8rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .social-icons a:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0px 40px #0ff;
-    }
-    .social-icons a.facebook {
-      background-color: #4267B2;
-    }
-    .social-icons a.twitter {
-      background-color: #1DA1F2;
-    }
-    .social-icons a.instagram {
-      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
-    }
-    .social-icons a.linkedin {
-      background-color: #0077B5;
-    }
-    .social-icons a.youtube {
-      background-color: #FF0000;
-    }
-    .social-icons a.tiktok {
-      background-color: #222;
-    }
-
-.contact-details p {
-    font-size: 1.2em; /* Font size for email and phone */
-    color: #fff; /* Darker color for text */
-}
-
-.contact-details a {font-size: 1.1em;
-color: #0ff;
-text-decoration: none;}
-
-.contact-details a:hover{ color:#007BFF;
-text-decoration: none;}
-
-
-    </style>
+        
+        /* FOOTER STYLE */
+        .footer {
+          background-color: #000000;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          padding: 2px;
+          position: relative;
+          height: fit-content;
+        }
+        
+        .footer-links {
+          margin-bottom: 0px;
+        }
+        
+        .footer-links a {
+          color: white;
+          font-size: 15px;
+          text-decoration: none;
+          margin: 0 15px;
+          transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+          color: #FF0080; /* Pink accent */
+        }
+        
+        #contact-info {
+          text-align: center;
+          color: #fff;
+        }
+        
+        .social-icons {
+          justify-content: center;
+          display: flex;
+          gap: 10px;
+        }
+        
+        .social-icons a {
+          text-decoration: none;
+          color: white;
+          width: 40px;
+          height: 40px;
+          font-size: 1.3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          border: 1px solid #fff;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+          transform: scale(1.2);
+          box-shadow: 0 0px 40px #8A2BE2; /* Purple glow */
+        }
+        
+        .social-icons a.facebook {
+          background-color: #4267B2;
+        }
+        
+        .social-icons a.twitter {
+          background-color: #1DA1F2;
+        }
+        
+        .social-icons a.instagram {
+          background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+        }
+        
+        .social-icons a.linkedin {
+          background-color: #0077B5;
+        }
+        
+        .social-icons a.youtube {
+          background-color: #FF0000;
+        }
+        
+        .social-icons a.tiktok {
+          background-color: #222;
+        }
+        
+        .contact-details p {
+          font-size: 16px;
+          color: #fff;
+        }
+        
+        .contact-details a {
+          font-size: 1.1em;
+          color: #8A2BE2; /* Purple links */
+          text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+          color: #FF0080; /* Pink accent */
+          text-decoration: none;
+        }
+      </style>
+      
   
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <div>           
-                <a href="Contact Ephraim.html">
-                    <img src="New logo.jpg" class="logo-img">
-                </a>
-            </div><!--logo division-->
-            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
-            <div class="nav-links" id="navLinks">
-              <a href="index.html">Home</a>
-              <a href="About Ephraim.html">About</a>
-              <a href="serviices.html">Services</a>
-              <a href="portfolio projects.html">Portfolio</a>
-              <a href="Contact Ephraim.html">Contact</a>
-              <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
-            </div>
-        </nav>
-        </header>
-        <script>
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-    
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
-                if (navLinks.classList.toggle('active')) {
-                    menuToggle.textContent = 'x';
-                } else {
-                    menuToggle.textContent = '☰';
-                }
-            });
-        </script>
-  
+ 
     <!-- Header -->
-
+    <header id="header">
+        <nav class="nav">
+          <a href="Contact Ephraim.html">
+            <img src="my logo.png" alt="Logo" class="logo-img" />
+          </a>
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+          <!-- Desktop Navigation Links -->
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About Ephraim.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio projects.html">Portfolio</a>
+            <a href="Contact Ephraim.html">Contact</a>
+            <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+          </div>
+        </nav>
+      </header>
+    
+      <!-- Mobile Menu Panel -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="About Ephraim.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio projects.html">Portfolio</a>
+        <a href="Contact Ephraim.html">Contact</a>
+        <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+      </div>
+    
+      <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          menuToggle.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
+        });
+    
+        // Optional: close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuToggle.textContent = '☰';
+          });
+        });
+    
+        // Header show/hide on scroll
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+    
+        window.addEventListener('scroll', () => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            header.classList.add('hidden');
+          } else {
+            header.classList.remove('hidden');
+          }
+          lastScrollTop = scrollTop;
+        });
+      </script>
 
     <!-- Portfolio Section -->
 
@@ -486,36 +568,36 @@ text-decoration: none;}
         <img src="" id="fullImg" alt="Fullscreen Image">
     </div>
 
-      <!--FOOTER SECTION-->  <footer class="footer">
-  <section id="contact-info">
-    <h2>On socials</h2>
-            <!-- Social Media Links with Icons -->
-            <div class="social-icons">
-                <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-              </div>
-       
-        </section>
-    <!--contact details-->
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for collaborations or project enquiries.</p>
-    <div class="contact-details">
-        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-        <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
-    </div>
-    <br>	
-        <div class="copyright">
-          &copy; 2024-2025 Ephraim Mutwiri.<br>
-           A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
-            <br><br><b>Reproduction of content strictly prohibited.</b>
+ <!--FOOTER SECTION-->  <footer class="footer">
+    <section id="contact-info">
+        <h2>On socials</h2>
+                <!-- Social Media Links with Icons -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                  </div>
+           
+            </section>
+        <!--contact details-->
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for project enquiries.</p>
+        <div class="contact-details">
+            <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+            <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+            <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
         </div>
-        <br>
-    </footer>
+        <br>	
+            <div class="copyright">
+              &copy; 2024-2025 Ephraim Mutwiri.<br>
+               A Website <a href="About Ephraim.html" style="color:#8A2BE2;text-decoration: none;">Designer</a>
+                <br><br><b>Reproduction of content strictly prohibited.</b>
+            </div>
+            <br>
+        </footer>
 
 
 	
