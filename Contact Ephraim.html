@@ -138,118 +138,77 @@
       line-height: 1.5;
     }
     
-    /* Contact Section */
-    .contact-section {
-      margin: 60px auto 50px;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      max-width: 1000px;
-    }
-    .contact-container {
-      background-color: #1a1a1a;
-      text-align: left;
-      color: #8A2BE2;
-      border-radius: 15px;
-      padding: 40px;
-      margin: 0 auto;
-      width: 1000px;
-      box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      color: #fff;
-    }
-    /* Animated Gradient Border for Inputs & Textareas */
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      background-image: 
-        linear-gradient(#1a1a1a, #1a1a1a),
-        linear-gradient(45deg, #360862, #780a41);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      background-size: 100% 100%, 400% 400%;
-      animation: borderAnimation 8s linear infinite;
-      color: white;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-    @keyframes borderAnimation {
-      0% {
-        background-position: 0% 50%, 0% 50%;
-      }
-      50% {
-        background-position: 0% 50%, 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%, 0% 50%;
-      }
-    }
-    /* Animated Gradient Placeholder for WebKit Browsers */
-    .form-group input::-webkit-input-placeholder,
-    .form-group textarea::-webkit-input-placeholder {
-      background: linear-gradient(45deg, #c689ff, #ff89c4, #c88eff, #ff87c3);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientloop 1s ease-in-out;
-    }
-    @keyframes gradientLoop {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    /* Standard Placeholder Fallback */
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #bbb;
-    }
-    .contact-form h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #fff;
-    }
-    .submit-btn {
-      background-color: #fff;
-      color: #000;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: block;
-      margin: 20px auto 10px;
-      transition: 0.3s ease;
-    }
-    .submit-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
-    }
-    .success-message {
-      display: none;
-      color: #FF0080;
-      font-size: 1.2rem;
-      text-align: center;
-      margin-top: 15px;
-    }
-    .error-message {
-      display: none;
-      color: #f00;
-      font-size: 1rem;
-      text-align: center;
-      margin-top: 10px;
-    }
-    
+  /* Contact Section */
+.contact-section {
+  margin: 60px auto 50px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+.contact-container {
+  background-color: #1a1a1a;
+  text-align: left;
+  color: #8A2BE2;
+  border-radius: 15px;
+  padding: 40px;
+  margin: 0 auto;
+  width: 1000px;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+}
+fieldset {
+  border: 2px solid #8A2BE2;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+legend {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+}
+.submit-btn {
+  background-color: #fff;
+  color: #000;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 10px;
+  transition: 0.3s ease;
+}
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+}
+.success-message {
+  display: none;
+  color: #FF0080;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 15px;
+}
+.error-message {
+  display: none;
+  color: #f00;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+}
     /* Footer Styles */
     .footer {
       background-color: #000;
@@ -440,31 +399,33 @@
       <div class="contact-container">
         <form action="https://formsubmit.co/ephraimmutwiri01@gmail.com" method="POST" class="contact-form" id="contactForm">
           <h2>Contact Me</h2>
-          <div class="form-group">
-            <label for="name">Your Name</label>
+          <fieldset>
+            <legend>Your Name</legend>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
+          </fieldset>
+          <fieldset>
+            <legend>Phone Number</legend>
             <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
+          </fieldset>
+          <fieldset>
+            <legend>Your Email</legend>
             <input type="email" id="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message</label>
+          </fieldset>
+          <fieldset>
+            <legend>Your Message</legend>
             <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <!-- Hidden fields for better control -->
+          </fieldset>
+          
           <input type="hidden" name="_subject" value="New Contact Form Submission">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="index.html">
+          
           <button type="submit" class="submit-btn">Send</button>
           <p class="success-message" id="successMessage">Message Sent. I'll get back to you in a moment. Redirecting...</p>
         </form>
       </div>
     </section>
+
 
     <!-- FOOTER SECTION -->
     <footer class="footer">
