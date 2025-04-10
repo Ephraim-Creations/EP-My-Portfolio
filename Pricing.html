@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Other head elements like title and link to CSS it (links to social accounts) -->
+    <link rel = "icon" href = "Untitled design (1).png"> 
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pricing | Ephraim</title>
+
+<style>
+       * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          background-color: #000;
+          overflow-x: hidden;
+          /* Give enough top padding so content isn't hidden behind header */
+          padding-top: 100px;
+        }
+        
+        /* Fixed Header Styles */
+        header {
+          background-color: #000000;
+          padding: 15px 20px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 30;
+          gap: 100px; 
+          transition: transform 0.3s ease-in-out;
+        }
+        
+        /* When header is hidden */
+        header.hidden {
+          transform: translateY(-100%);
+        }
+        
+        /* Center nav items and limit container to 1500px on PC */
+        .nav {
+          max-width: 1500px;
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 60px;
+          position: relative;
+          height: fit-content;
+        }
+        
+        .nav a {
+          text-decoration: none;
+        }
+        
+        /* Increase logo size on desktop */
+        .logo-img {
+          max-width: 200px;
+          width: 100%;
+          height: auto;
+        }
+        
+        /* Desktop Navigation Links */
+        .nav-links {
+          display: flex;
+          gap: 50px;
+        }
+        
+        .nav-links a {
+          text-decoration: none;
+          padding: 5px 10px;
+          color: #fff;
+          font-size: 20px;
+          transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+          background-color: #8A2BE2;
+          padding: 5px 10px;
+          color: #000;
+          border-radius: 10px;
+        }
+        
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          font-size: 28px;
+          color: #fff;
+          cursor: pointer;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        
+        /* Mobile Menu Panel */
+        .mobile-menu {
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          top: 0;
+          left: -75%; /* Hidden offscreen to the left */
+          width: 75%;
+          height: 100vh;
+          background-color: #000000f1;
+          z-index: 20;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          transition: left 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+          left: 0; /* Slides in from the left */
+        }
+        
+        .mobile-menu a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 16px;
+          padding: 5px 10px;
+        }
+        
+        .mobile-menu a:hover {
+          background-color: #8A2BE2;
+          padding: 5px 10px;
+          color: #000;
+          border-radius: 10px;
+        }
+        
+        /* Responsive Styles for tablets & below */
+        @media (max-width: 768px) {
+          .nav {
+            justify-content: center;
+          }
+          .nav-links {
+            display: none;
+          }
+          .mobile-menu-toggle {
+            display: block;
+          }
+          .logo-img {
+            max-width: 160px;
+          }
+        }
+
+/* Pricing Section */
+.pricing-section {
+  margin: 60px auto 50px;
+  padding: 0 20px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.section-title {
+  color: #8A2BE2;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Pricing Cards */
+.pricing-card {
+  background-color: #1a1a1a;
+  color: #8A2BE2;
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 300px;
+  min-height: 580px; /* ensure same height for all cards */
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+  text-align: left;
+  transition: 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.7);
+}
+
+.pricing-card h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* Price Section (KES and USD) */
+.pricing-card .pricing {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-card .price-kes {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #FF0080; /* Custom color for KES */
+}
+
+.pricing-card .price-usd {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* List of Features */
+.pricing-card ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #8A2BE2;
+}
+
+/* Button Styling */
+.pricing-card button {
+  background-color: #fff;
+  color: #000;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  display: block;
+  margin-top: auto;
+}
+
+.pricing-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+}
+
+
+
+.ribbon {
+  position: absolute;
+  top: 12px;
+  right: -20px;
+  background: #FF0080;
+  color: #fff;
+  padding: 5px 30px;
+  transform: rotate(30deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 0, 128, 0.3);
+  z-index: 2;
+}
+
+
+.pricing-card.highlight {
+  border: 2px solid #FF0080;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+  position: relative;
+}
+
+.modal-content h3 {
+  color: #8A2BE2;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #FF0080;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .pricing-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* Price Section */
+  .pricing-card .pricing {
+    margin-bottom: 15px; /* Reduce space for smaller screens */
+  }
+
+  .pricing-card .price-kes {
+    font-size: 1.8rem; /* Smaller size for KES */
+  }
+
+  .pricing-card .price-usd {
+    font-size: 0.9rem; /* Smaller size for USD */
+  }
+
+  .ribbon {
+  position: absolute;
+  top: 12px;
+  right: -20px;
+  background: #FF0080;
+  color: #fff;
+  padding: 5px 30px;
+  transform: rotate(30deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 0, 128, 0.3);
+  z-index: 2;
+}
+}
+
+
+
+
+        /* FOOTER STYLE */
+        .footer {
+          background-color: #000000;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          padding: 2px;
+          position: relative;
+          height: fit-content;
+        }
+        
+        .footer-links {
+          margin-bottom: 0;
+        }
+        
+        .footer-links a {
+          color: white;
+          font-size: 15px;
+          text-decoration: none;
+          margin: 0 15px;
+          transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+          color: #FF0080;
+        }
+        
+        #contact-info {
+          text-align: center;
+          color: #fff;
+        }
+        
+        .social-icons {
+          justify-content: center;
+          display: flex;
+          gap: 10px;
+        }
+        
+        .social-icons a {
+          text-decoration: none;
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          font-size: 1.3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          border: 1px solid #fff;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+          transform: scale(1.2);
+          box-shadow: 0 0 40px #8A2BE2;
+        }
+        
+        .social-icons a.facebook {
+          background-color: #4267B2;
+        }
+        
+        .social-icons a.twitter {
+          background-color: #1DA1F2;
+        }
+        
+        .social-icons a.instagram {
+          background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+        }
+        
+        .social-icons a.linkedin {
+          background-color: #0077B5;
+        }
+        
+        .social-icons a.youtube {
+          background-color: #FF0000;
+        }
+        
+        .social-icons a.tiktok {
+          background-color: #222;
+        }
+        
+        .contact-details p {
+          font-size: 16px;
+          color: #fff;
+        }
+        
+        .contact-details a {
+          font-size: 1.1em;
+          color: #8A2BE2;
+          text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+          color: #FF0080;
+          text-decoration: none;
+        }
+</style>
+</head>
+
+<body>
+
+    <header id="header">
+        <nav class="nav">
+          <a href="Contact Ephraim.html">
+            <img src="my logo.png" alt="Logo" class="logo-img" />
+          </a>
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+          <!-- Desktop Navigation Links -->
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About Ephraim.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio projects.html">Portfolio</a>
+            <a href="Contact Ephraim.html">Contact</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+          </div>
+        </nav>
+      </header>
+    
+      <!-- Mobile Menu Panel -->
+<!-- Mobile Menu Panel -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="About Ephraim.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio projects.html">Portfolio</a>
+    <a href="Contact Ephraim.html">Contact</a>
+    <a href="Pricing.html">Pricing</a>
+    <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+  </div>
+  
+    
+      <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          menuToggle.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
+        });
+    
+        // Optional: close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuToggle.textContent = '☰';
+          });
+        });
+    
+        // Header show/hide on scroll
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+    
+        window.addEventListener('scroll', () => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            header.classList.add('hidden');
+          } else {
+            header.classList.remove('hidden');
+          }
+          lastScrollTop = scrollTop;
+        });
+      </script>
+
+
+<section class="pricing-section">
+    <h2 class="section-title">Choose Your Plan</h2>
+    <div class="pricing-container">
+  
+      <!-- Basic Plan -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="pricing">
+          <p class="price-kes">KES 15,000</p>
+          <p class="price-usd">USD 115.67</p>
+        </div>
+        <ul>
+          <li>Up to 5 pages</li>
+          <li>Free logo</li>
+          <li>2 blog publishing</li>
+          <li>2 free revisions</li>
+          <li>Basic SEO</li>
+        </ul>
+        <button onclick="openModal('basicModal')">Select Plan</button>
+      </div>
+  
+      <!-- Pro Plan -->
+      <div class="pricing-card highlight">
+        <div class="ribbon">Top Selling</div>
+        <h3>Pro</h3>
+        <div class="pricing">
+          <p class="price-kes">KES 25,000</p>
+          <p class="price-usd">USD 192.78</p>
+        </div>
+        <ul>
+          <li>Up to 10 pages</li>
+          <li>Free logo</li>
+          <li>Members page</li>
+          <li>4 blog publishing</li>
+          <li>Social media integration</li>
+          <li>Basic website automations</li>
+          <li>3 free revisions</li>
+          <li>Advanced SEO</li>
+        </ul>
+        <button onclick="openModal('proModal')">Select Plan</button>
+      </div>
+  
+      <!-- Premium Plan -->
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <div class="pricing">
+          <p class="price-kes">KES 30,000</p>
+          <p class="price-usd">USD 231.34</p>
+        </div>
+        <ul>
+          <li>Up to 15 pages</li>
+          <li>Free logo</li>
+          <li>Members page</li>
+          <li>Sell online</li>
+          <li>5 free revisions</li>
+          <li>5 blog publishing</li>
+          <li>Premium SEO</li>
+          <li>Accept online payments</li>
+          <li>Automated marketing tools</li>
+          <li>Software integrations (e.g. maps)</li>
+          <li>Goods delivery to customers</li>
+          <li>24/7 customer care services</li>
+        </ul>
+        <button onclick="openModal('premiumModal')">Select Plan</button>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+<!-- Basic Modal -->
+<div id="basicModal" class="modal">
+    <div class="modal-content animate-pop">
+      <span class="close" onclick="closeModal('basicModal')">&times;</span>
+      <h3>✨ Basic Plan Details</h3>
+      <p><strong>Perfect for:</strong> Personal brands, students, and small projects.</p>
+      <ul>
+        <li>✅ Up to 5 web pages</li>
+        <li>✅ Free custom logo</li>
+        <li>✅ Blog setup</li>
+        <li>✅ Basic SEO integration</li>
+      </ul>
+      <p class="note">Get online fast and affordably with everything you need to get started.</p>
+    </div>
+  </div>
+  
+  <!-- Pro Modal -->
+  <div id="proModal" class="modal">
+    <div class="modal-content animate-pop">
+      <span class="close" onclick="closeModal('proModal')">&times;</span>
+      <h3>🚀 Pro Plan Details</h3>
+      <p><strong>Built for:</strong> Small businesses, creators, and startups.</p>
+      <ul>
+        <li>✅ Members-only pages</li>
+        <li>✅ Workflow automation</li>
+        <li>✅ Blog & newsletter support</li>
+        <li>✅ Advanced SEO setup</li>
+      </ul>
+      <p class="note">Grow your brand with features that bring traffic and engagement.</p>
+    </div>
+  </div>
+  
+  <!-- Premium Modal -->
+  <div id="premiumModal" class="modal">
+    <div class="modal-content animate-pop">
+      <span class="close" onclick="closeModal('premiumModal')">&times;</span>
+      <h3>💎 Premium Plan Details</h3>
+      <p><strong>Made for:</strong> Serious business owners ready to scale.</p>
+      <ul>
+        <li>✅ E-commerce with full shop setup</li>
+        <li>✅ Third-party tool integrations</li>
+        <li>✅ Sales automation & funnels</li>
+        <li>✅ Dedicated customer support</li>
+      </ul>
+      <p class="note">A complete digital powerhouse tailored for your success.</p>
+    </div>
+  </div>
+  
+  
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+      <!--FOOTER SECTION-->  <footer class="footer">
+        <section id="contact-info">
+            <h2>On socials</h2>
+                    <!-- Social Media Links with Icons -->
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                      </div>
+               
+                </section>
+            <!--contact details-->
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for project enquiries.</p>
+            <div class="contact-details">
+                <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+                <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+                <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+            </div>
+            <br>	
+                <div class="copyright">
+                  &copy; 2024-2025 Ephraim Mutwiri.<br>
+                   A Website <a href="About Ephraim.html" style="color: #360862;text-decoration: none;">Designer</a>
+                    <br><br><b>Reproduction of content strictly prohibited.</b>
+                </div>
+                <br>
+            </footer>
+</body>
+</html>
