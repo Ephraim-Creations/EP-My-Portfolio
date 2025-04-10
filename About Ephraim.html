@@ -463,66 +463,70 @@
       
 </head>
 <body>
-    <header id="header">
-        <nav class="nav">
-          <a href="Contact Ephraim.html">
-            <img src="my logo.png" alt="Logo" class="logo-img" />
-          </a>
-          <!-- Mobile Menu Toggle -->
-          <button class="mobile-menu-toggle" id="menuToggle">☰</button>
-          <!-- Desktop Navigation Links -->
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="About Ephraim.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio projects.html">Portfolio</a>
-            <a href="Contact Ephraim.html">Contact</a>
-            <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
-          </div>
-        </nav>
-      </header>
-    
-      <!-- Mobile Menu Panel -->
-      <div class="mobile-menu" id="mobileMenu">
+  <header id="header">
+    <nav class="nav">
+      <a href="Contact Ephraim.html">
+        <img src="my logo.png" alt="Logo" class="logo-img" />
+      </a>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="About Ephraim.html">About</a>
         <a href="services.html">Services</a>
         <a href="portfolio projects.html">Portfolio</a>
         <a href="Contact Ephraim.html">Contact</a>
+        <a href="Pricing.html">Pricing</a>
         <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
       </div>
-    
-      <script>
-        // Toggle mobile menu
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => {
-          mobileMenu.classList.toggle('open');
-          menuToggle.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
-        });
-    
-        // Optional: close mobile menu when a link is clicked
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            menuToggle.textContent = '☰';
-          });
-        });
-    
-        // Header show/hide on scroll
-        let lastScrollTop = 0;
-        const header = document.getElementById('header');
-    
-        window.addEventListener('scroll', () => {
-          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          if (scrollTop > lastScrollTop) {
-            header.classList.add('hidden');
-          } else {
-            header.classList.remove('hidden');
-          }
-          lastScrollTop = scrollTop;
-        });
-      </script>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Panel -->
+<!-- Mobile Menu Panel -->
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="About Ephraim.html">About</a>
+<a href="services.html">Services</a>
+<a href="portfolio projects.html">Portfolio</a>
+<a href="Contact Ephraim.html">Contact</a>
+<a href="Pricing.html">Pricing</a>
+<a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+</div>
+
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuToggle.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
+    });
+
+    // Optional: close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Header show/hide on scroll
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
 
 
 
