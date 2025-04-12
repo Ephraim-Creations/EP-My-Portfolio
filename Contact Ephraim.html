@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!--for footer icons-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="icon" href="Untitled design (1).png">
   <meta charset="UTF-8">
@@ -209,119 +211,266 @@ input:focus, textarea:focus {
   text-align: center;
   margin-top: 10px;
 }
-    /* Footer Styles */
-    .footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 2px;
-      position: relative;
-      height: fit-content;
-    }
-    .footer-links {
-      margin-bottom: 0;
-    }
-    .footer-links a {
-      color: #fff;
-      font-size: 15px;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: color 0.3s;
-    }
-    .footer-links a:hover {
-      color: #FF0080;
-    }
-    #contact-info {
-      text-align: center;
-      color: #fff;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    .social-icons a {
-      text-decoration: none;
-      color: #fff;
-      width: 40px;
-      height: 40px;
-      font-size: 1.3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .social-icons a:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 40px #8A2BE2;
-    }
-    .social-icons a.facebook { background-color: #4267B2; }
-    .social-icons a.twitter { background-color: #1DA1F2; }
-    .social-icons a.instagram { 
-      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
-    }
-    .social-icons a.linkedin { background-color: #0077B5; }
-    .social-icons a.youtube { background-color: #FF0000; }
-    .social-icons a.tiktok { background-color: #222; }
-    .contact-details p {
-      font-size: 16px;
-      color: #fff;
-    }
-    .contact-details a {
-      font-size: 1.1em;
-      color: #8A2BE2;
-      text-decoration: none;
-    }
-    .contact-details a:hover {
-      color: #FF0080;
-      text-decoration: none;
-    }
-    
-    /* MEDIA QUERIES FOR RESPONSIVENESS */
-    /* Tablet devices (max-width: 768px) */
-    @media (max-width: 768px) {
-      /* Header Adjustments */
-      header { padding: 10px 15px; }
-      .logo-img { max-width: 160px; }
-      .nav { gap: 30px; }
-      /* Hide desktop nav and show mobile toggle */
-      .nav-links { display: none; }
-      .mobile-menu-toggle { display: block; }
-      
-      /* Contact Container */
-      .contact-container {
-        width: 100%;
-        padding: 20px;
-        margin: 20px auto;
-      }
-      .contact-form h2 { font-size: 2rem; }
-      .form-group label { font-size: 1rem; }
-      .form-group input,
-      .form-group textarea { font-size: 0.9rem; padding: 10px; }
-      .submit-btn { padding: 12px 30px; font-size: 1rem; }
-    }
-    
-    /* Mobile devices (max-width: 480px) */
-    @media (max-width: 480px) {
-      header { padding: 8px 10px; }
-      .mobile-menu-toggle { font-size: 24px; right: 10px; }
-      .logo-img { max-width: 140px; }
-      /* About Section adjustments */
-      #about { padding: 40px 10px; }
-      #about h2 { font-size: 1.8rem; }
-      #about p { font-size: 1rem; }
-      /* Contact Section adjustments */
-      .contact-section { padding: 0 10px; }
-      .contact-container { padding: 15px; }
-      .contact-form h2 { font-size: 1.8rem; }
-      .form-group label { font-size: 0.9rem; }
-      .form-group input,
-      .form-group textarea { font-size: 0.85rem; padding: 8px; }
-      .submit-btn { padding: 10px 25px; font-size: 0.95rem; }
-      .contact-details p { font-size: 14px; }
-    }
+.footer {
+border-top: 1px solid #333333;
+  background-color: #111;
+  color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #f9f9f9;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #FF0080;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: left;
+}
+
+.footer-col {
+  background-color: transparent;
+  padding: 10px;
+}
+
+.footer-about h2,
+.footer-social h2,
+.footer-contact-location h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  color: #8A2BE2;
+}
+
+.footer-logo img {
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+.newsletter-container {
+  margin-top: 10px;
+}
+
+.newsletter-container h3 {
+  font-size: 1.2rem;
+  color: #8A2BE2;
+}
+
+.newsletter-container p {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.form-inline-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-inline-group input[type="text"],
+.form-inline-group input[type="email"] {
+  flex: 1 1 200px;
+  padding: 10px 12px;
+  border: 2px solid #ff0080;
+  border-radius: 8px;
+}
+
+
+.form-inline-group button[type="submit"] {
+  background-color: #ff349a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-inline-group button[type="submit"]:hover {
+  background-color: #e02e8c;
+}
+
+/* Message styles */
+#form-message p {
+  margin-top: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.message-success {
+  color: #2a9d4f;
+  border: 1px solid #2a9d4f;
+}
+
+.message-error {
+  color: #d62828;
+  border: 1px solid #d62828;
+}
+
+
+/*socials*/
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #f9f9f9;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.95rem;
+}
+
+.social-icons a:hover {
+  background-color: #3a3a3a;
+  transform: translateY(-2px);
+  color: #FF0080;
+}
+
+.footer-contact-location p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.contact-details li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-details li i {
+  margin-right: 10px;
+  color: #8A2BE2;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.contact-details a {
+  color: #b990f3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-details a:hover {
+  color: #FF0080;
+}
+
+.contact-details li i:hover {
+  color: #FF0080;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .contact-details li {
+    justify-content: center; /* Center the icon and text */
+    text-align: center; /* Center the text */
+  }
+
+  .contact-details li i {
+    margin-right: 0; /* Remove margin between icon and text */
+    margin-bottom: 5px; /* Space the icon slightly from the text */
+  }
+}
+
+.footer-contact-location h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.footer-divider {
+  border: none;
+  height: 1px;
+  background: #444;
+  margin: 20px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-bottom a {
+  color: #8A2BE2;
+}
+
+.footer-bottom a:hover {
+  color: #FF0080;
+}
+
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  .footer-col {
+    padding: 0;
+  }
+  .footer-col img,
+  .footer-col p,
+  .footer-col h2,
+  .footer-col ul,
+  .footer-col h3 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #f9f9f9;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 0.95rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -434,35 +583,137 @@ input:focus, textarea:focus {
     </section>
 
 
-    <!-- FOOTER SECTION -->
-    <footer class="footer">
-      <section id="contact-info">
-        <h2>On socials</h2>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+<!-- FOOTER SECTION -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Top Row: 3 Columns (Desktop) -->
+    <div class="footer-columns">
+      <!-- Column 1: About -->
+      <div class="footer-col footer-about">
+        <h2>About</h2>
+        <!-- Logo (Optional) -->
+        <div class="footer-logo">
+          <!-- Replace "logo.png" with your actual logo image -->
+          <img src="my logo.png" alt="Ephraim Mutwiri Logo">
         </div>
-      </section>
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out for project enquiries.</p>
-      <div class="contact-details">
-        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-        <p>Order Services: <a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+        <p>
+          Welcome to my website. I am dedicated to delivering creative design solutions and
+          innovative digital experiences. Stay connected with me for updates and inspiration.
+        </p>
+  
+        <div class="newsletter-container">
+          <h3>Subscribe for the Newsletter</h3>
+          <p>Get tips and updates straight to your email.</p>
+          <form id="subscribe-form" action="https://script.google.com/macros/s/AKfycbwJTfldA6gKDSBCU8RyJ3dVhE_cm9VUe2JRsPIDp3cQePTb_S22g5d9dvMjkvwuMMLQ/exec" method="POST">
+            <div class="form-inline-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Enter your email" required>
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          <div id="form-message"></div>
+          
+          <!-- Message container where success or error messages will appear -->
+          <div id="form-message"></div>
+        </div>
+        
+        
+
       </div>
-      <br>
-      <div class="copyright">
-        &copy; 2024-2025 Ephraim Mutwiri.<br>
-        A Website <a href="About Ephraim.html" style="color: #8A2BE2; text-decoration: none;">Designer</a><br><br>
-        <b>Reproduction of content strictly prohibited.</b>
+      
+      <!-- Column 2: Socials -->
+      <div class="footer-col footer-social">
+        <h2> Stay Connected</h2>
+        <div class="social-icons">
+          <!-- Keep your existing social links and icons -->
+          <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i><span>Facebook</span>
+          </a>
+          <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank">
+            <i class="fab fa-twitter"></i><span>Twitter</span>
+          </a>
+          <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank">
+            <i class="fab fa-instagram"></i><span>Instagram</span>
+          </a>
+          <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+          </a>
+          <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank">
+            <i class="fab fa-youtube"></i><span>YouTube</span>
+          </a>
+          <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank">
+            <i class="fab fa-tiktok"></i><span>TikTok</span>
+          </a>
+        </div>
       </div>
-      <br>
-    </footer>
-  </main>
+      
+      <!-- Column 3: Contact + Location -->
+      <div class="footer-col footer-contact-location">
+        <!-- Contact Info -->
+        <h2>Contact Information</h2>
+        <p>Feel free to reach out for project enquiries.</p>
+        <ul class="contact-details">
+          <li><i class="fas fa-envelope"></i> <a href="#" onclick="window.location.href='mailto:' + 'ephraimmutwiri01' + '@' + 'gmail.com';">Email Me</a></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+254112268873">+254 112 268 873</a></li>
+          <li><i class="fas fa-globe"></i> <a href="https://www.ephraimcreations.online">Visit Website</a></li>
+        </ul>
+        <!-- Location -->
+        <h3>Location</h3>
+        <p style="color:#ff349a ;">
+        Based in Nyahururu,<br>
+        Serves Kenya & the World...
+        </p>
+      </div>
+    </div>
+
+    <!-- Divider (thin line) -->
+    <hr class="footer-divider">
+
+    <!-- Bottom Row: Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; 2024-2025 Ephraim Mutwiri.</p>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script>
+  document.getElementById('subscribe-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const messageDiv = document.getElementById('form-message');
+    messageDiv.innerHTML = '';
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      const msg = document.createElement('p');
+      msg.textContent = data.message;
+
+      if (data.success) {
+        msg.className = 'message-success';
+        form.reset();
+      } else {
+        msg.className = 'message-error';
+      }
+
+      messageDiv.appendChild(msg);
+    })
+    .catch(error => {
+      const msg = document.createElement('p');
+      msg.textContent = "Submission failed: " + error.message;
+      msg.className = 'message-error';
+      messageDiv.appendChild(msg);
+    });
+  });
+</script>
+
 
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(event) {
